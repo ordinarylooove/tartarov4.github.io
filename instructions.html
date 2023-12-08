@@ -1,0 +1,72 @@
+<!-- instructions.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Encabezado con estilos y fuentes -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Cambiado a Arial para una apariencia más seria */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000;
+            background-image: url('fondo1.jpg'); /* Ruta a tu fondo deseado */
+            background-size: cover;
+            transition: background-image 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.8);
+            min-height: 150px;
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+            color: #000;
+            text-shadow: none;
+            transition: transform 0.3s ease;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+    </style>
+    <!-- ... Resto del encabezado ... -->
+</head>
+<body>
+    <div class="container">
+        <h1>Instrucciones del Juego</h1>
+        <p style="text-align: left;">
+            Juega desde 2 a 5 personas.<br>
+            Si no tienes juguetes omite esas preguntas y pasa a la siguiente.<br>
+            Comienza el juego con ropa adecuada.<br>
+            Si no cumples algún castigo, debes abandonar la habitación.<br>
+            Algunas de las cosas que necesitas son: dildos, preservativos, lubricantes, pinzas para pezones, estimulante sexual, disfraces.<br>
+            Está prohibido llegar al coito antes de finalizar el juego.
+        </p>
+        <button onclick="understood()">Entendido</button>
+    </div>
+</body>
+
+    <script>
+        function understood() {
+            // Redirige a la página principal del juego
+            window.location.href = 'tartaro.html';
+        }
+    </script>
+</body>
+</html>
+

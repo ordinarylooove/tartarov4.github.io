@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000;
+            background-image: url('fondo1.jpg'); /* Ruta a tu primer fondo */
+            background-size: cover;
+            transition: background-image 0.5s ease; /* Agregamos una transición suave para el cambio de fondo */
+            position: relative;
+        }
+
+        #audio-control {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.8); /* Blanco translúcido */
+            min-height: 150px;
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+            color: #000; /* Todas las letras negras */
+            text-shadow: none; /* Eliminar el sombreado para tener letras más nítidas */
+            transition: transform 0.3s ease; /* Agregamos una pequeña animación de transformación */
+        }
+
+        .container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+
+        #question-container {
+            transform: translateY(0); /* Restaurar posición inicial */
+        }
+
+        #fingerprint-container,
+        #result-container {
+            transform: translateY(20px); /* Mover hacia abajo para dar una apariencia de superposición */
+            opacity: 0.8; /* Reducir la opacidad para dar una apariencia de fondo más enfocado */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        audio {
+            display: none; /* Oculta el reproductor de audio */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Simulador de Verificación</title>
+</head>
+<body>
+    <!-- Agrega el elemento audio con la canción de fondo -->
+    <audio loop autoplay id="background-music">
+    <source src="tu_cancion.mp3" type="audio/mp3"> <!-- Ajusta la ruta y el tipo de archivo según tu canción -->
+    Tu navegador no soporta la etiqueta audio.
+</audio>
+
+    <!-- Agrega el icono de reproducción/detención -->
+    <div id="audio-control" onclick="toggleAudio()">
+        ▶️
+    </div>
+
+    <div id="question-container" class="container">
+        <h1 id="question-text"></h1>
+        <button onclick="answerQuestion(true)">Sí</button>
+        <button onclick="answerQuestion(false)">No</button>
+    </div>
+
+    <div id="fingerprint-container" class="container hidden">
+        <h2>Coloca el dedo en el lector de huellas</h2>
+        <button onclick="verifyFingerprint()">Enter</button>
+    </div>
+
+    <div id="result-container" class="container hidden">
+        <h2 id="result-text"></h2>
+        <button onclick="nextAction()">Siguiente Pregunta</button>
+    </div>
+
+    <script>
+        // Resto del código JavaScript
+        function toggleAudio() {
+            var audio = document.getElementById('background-music');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

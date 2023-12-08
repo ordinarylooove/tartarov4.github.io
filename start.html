@@ -1,0 +1,62 @@
+<!-- start.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Encabezado con estilos y fuentes -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; /* Cambiado a Arial para una apariencia más seria */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000;
+            background-image: url('fondo1.jpg'); /* Ruta a tu fondo deseado */
+            background-size: cover;
+            transition: background-image 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.8);
+            min-height: 150px;
+            width: 80%;
+            max-width: 400px;
+            margin: auto;
+            color: #000;
+            text-shadow: none;
+            transition: transform 0.3s ease;
+        }
+
+        .container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+    </style>
+    <!-- ... Resto del encabezado ... -->
+</head>
+<body>
+    <div class="container">
+        <h1>Lee atentamente las instrucciones antes de comenzar el juego</h1>
+        <button onclick="startGame()">Start</button>
+    </div>
+
+    <script>
+        function startGame() {
+            // Redirige a la página de instrucciones
+            window.location.href = 'instructions.html';
+        }
+    </script>
+</body>
+</html>
